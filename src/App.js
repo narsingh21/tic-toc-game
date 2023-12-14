@@ -109,7 +109,7 @@ function App() {
       console.log('win');
       winRef.current.classList.remove('hidden');
       // winRef.current.classList.remove('main-div');
-      // winRef.current.classList.add('main-div');
+      winRef.current.classList.add('main-div2');
     }
   }
   checkWin();
