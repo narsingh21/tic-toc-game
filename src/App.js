@@ -127,13 +127,12 @@ function App() {
       (value[6].content === 'o')
   ) {
     setWin(true);
-    setValue(intialState);
   }
 
   return (
     <div className='app'>
       <div className='root-container'>
-        <h1 className='heading'> Tic toc game</h1>
+        <h1 className='heading'> Tic Toc Game</h1>
         <div className=' container'>
           {value.map((el) => (
             <div
@@ -143,10 +142,16 @@ function App() {
             >{`${el.clicked ? el.content : ''}`}</div>
           ))}
         </div>
-        <button className='btn' onClick={() => setValue(intialState)}>
+        <button
+          className='btn'
+          onClick={() => {
+            setValue(intialState);
+            setWin(null);
+          }}
+        >
           Reset
         </button>
-        <p>{win && 'Win' }</p>
+        <p>{win && 'Win'}</p>
       </div>
     </div>
   );
