@@ -32,6 +32,6 @@
   color: #ffff;
   font-size: larger;
   padding: 1rem;
-  margin-left: auto;
-  margin-right: auto;
+  border-radius: 2rem;
+  border: none;
 }

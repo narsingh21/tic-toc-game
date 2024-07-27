@@ -51,6 +51,7 @@ const intialState = [
 function App() {
   const [value, setValue] = useState(intialState);
   const [totalClick, setTotalClick] = useState(0);
+  const [win, setWin] = useState();
 
   function clickHandler(boxId) {
     if (totalClick % 2 === 0) {
@@ -125,7 +126,7 @@ function App() {
       (value[4].content === 'o') &
       (value[6].content === 'o')
   ) {
-    console.log('win');
+    setWin(true);
     setValue(intialState);
   }
 
@@ -145,6 +146,7 @@ function App() {
         <button className='btn' onClick={() => setValue(intialState)}>
           Reset
         </button>
+        <p>{win && 'Win' }</p>
       </div>
     </div>
   );
