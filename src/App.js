@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import { useState } from 'react';
 import './App.css';
 
@@ -127,19 +126,25 @@ function App() {
       (value[6].content === 'o')
   ) {
     console.log('win');
+    setValue(intialState);
   }
 
   return (
-    <div className='App'>
-      <h1> Tic toc game</h1>
-      <div className='contianer container'>
-        {value.map((el) => (
-          <div
-            className='box'
-            key={el.id}
-            onClick={() => clickHandler(el.id)}
-          >{`${el.clicked ? el.content : ''}`}</div>
-        ))}
+    <div className='app'>
+      <div className='root-container'>
+        <h1 className='heading'> Tic toc game</h1>
+        <div className=' container'>
+          {value.map((el) => (
+            <div
+              className='box'
+              key={el.id}
+              onClick={() => clickHandler(el.id)}
+            >{`${el.clicked ? el.content : ''}`}</div>
+          ))}
+        </div>
+        <button className='btn' onClick={() => setValue(intialState)}>
+          Reset
+        </button>
       </div>
     </div>
   );
